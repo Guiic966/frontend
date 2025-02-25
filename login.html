@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Rede de Ideias</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f2f5;
+      font-family: Arial, sans-serif;
+    }
+    .login-container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 350px;
+    }
+    .login-container h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    .login-options button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      background-color: #1877f2;
+      color: white;
+      transition: 0.3s;
+    }
+    .login-options button:hover {
+      background-color: #135db5;
+    }
+    .login-form {
+      display: none;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #42b72a;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button[type="submit"]:hover {
+      background-color: #36a420;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Escolha seu tipo de Login</h2>
+    <div class="login-options">
+      <button onclick="showForm('criador')">Login Criador de Ideias</button>
+      <button onclick="showForm('empresa')">Login Empresa</button>
+      <button onclick="showForm('desenvolvedor')">Login Desenvolvedor</button>
+    </div>
+
+    <div id="criador-form" class="login-form">
+      <h3>Cadastro Criador de Ideias</h3>
+      <form id="cadastro-criador">
+        <input type="text" placeholder="Nome Completo" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Senha" required>
+        <input type="text" placeholder="CPF" required>
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+
+    <div id="empresa-form" class="login-form">
+      <h3>Cadastro Empresa</h3>
+      <form id="cadastro-empresa">
+        <input type="text" placeholder="Nome da Empresa" required>
+        <input type="text" placeholder="CNPJ" required>
+        <input type="email" placeholder="Email Empresarial" required>
+        <input type="password" placeholder="Senha" required>
+        <input type="text" placeholder="Endereço" required>
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+
+    <div id="desenvolvedor-form" class="login-form">
+      <h3>Cadastro Desenvolvedor</h3>
+      <form id="cadastro-desenvolvedor">
+        <input type="text" placeholder="Nome Completo" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Senha" required>
+        <input type="text" placeholder="Área de Atuação" required>
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function showForm(type) {
+      document.getElementById("criador-form").style.display = "none";
+      document.getElementById("empresa-form").style.display = "none";
+      document.getElementById("desenvolvedor-form").style.display = "none";
+      
+      if (type === 'criador') {
+        document.getElementById("criador-form").style.display = "block";
+      } else if (type === 'empresa') {
+        document.getElementById("empresa-form").style.display = "block";
+      } else if (type === 'desenvolvedor') {
+        document.getElementById("desenvolvedor-form").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

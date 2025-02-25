@@ -1,0 +1,1 @@
+console.log("Rede de Ideias carregada!");
